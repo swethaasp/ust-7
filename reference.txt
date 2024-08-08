@@ -263,3 +263,443 @@ Fast-forward
 
 SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
 $
+
+
+
+
+
+//8 aug 
+
+[designBranch 88f7805]  Please enter the commit message for your changes. Lines starting
+ 1 file changed, 265 insertions(+)
+ create mode 100644 reference.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (designBranch)
+$ git branch
+* designBranch
+  master
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (designBranch)
+$ mkdir design
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (designBranch)
+$ cd design
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (designBranch)
+$ touch ui.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (designBranch)
+$ git add .
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (designBranch)
+$ git commit -m "created and commited ui file"
+[designBranch 6794323] created and commited ui file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 design/ui.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (designBranch)
+$ git checkout master
+Switched to branch 'master'
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git merge designBranch
+Updating 9d1f99d..6794323
+Fast-forward
+ design/ui.txt |   0
+ reference.txt | 265 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 265 insertions(+)
+ create mode 100644 design/ui.txt
+ create mode 100644 reference.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git push origin master
+To https://github.com/swethaasp/ust-7
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/swethaasp/ust-7'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git pull origin master
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 8 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (8/8), 2.73 KiB | 121.00 KiB/s, done.
+From https://github.com/swethaasp/ust-7
+ * branch            master     -> FETCH_HEAD
+   9d1f99d..f0a7bb1  master     -> origin/master
+Merge made by the 'ort' strategy.
+ card.txt    | 1 +
+ payment.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 card.txt
+ create mode 100644 payment.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git push origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 2.64 KiB | 1.32 MiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/swethaasp/ust-7
+   f0a7bb1..15bc331  master -> master
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git rebase master
+Current branch master is up to date.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git fetch
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 876 bytes | 125.00 KiB/s, done.
+From https://github.com/swethaasp/ust-7
+ * [new branch]      developer  -> origin/developer
+   15bc331..bc06b18  master     -> origin/master
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git rebase origin/master
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../payment.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git add .
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ git commit -m "committing payment"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../payment.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/design (master)
+$ cd ..
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
+$ git add .
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
+$ git push origin master
+To https://github.com/swethaasp/ust-7
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/swethaasp/ust-7'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
+$ git add payment.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
+$ git commit -m "commiting payment.txt"
+[master 44101cb] commiting payment.txt
+ 1 file changed, 1 insertion(+)
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
+$ git rebase origin/master
+CONFLICT (modify/delete): payment.txt deleted in HEAD and modified in 44101cb (commiting payment.txt).  Version 44101cb (commiting payment.txt) of payment.txt left in tree.
+error: could not apply 44101cb... commiting payment.txt
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 44101cb... commiting payment.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git push origin master
+To https://github.com/swethaasp/ust-7
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/swethaasp/ust-7'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git pull origin master
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git push -u -f origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 282 bytes | 141.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/swethaasp/ust-7
+ + bc06b18...44101cb master -> master (forced update)
+branch 'master' set up to track 'origin/master'.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git rebase origin/master
+fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+        git rebase (--continue | --abort | --skip)
+If that is not the case, please
+        rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git pull origin master
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto bc06b18
+Last command done (1 command done):
+   pick 44101cb commiting payment.txt
+No commands remaining.
+You are currently rebasing branch 'master' on 'bc06b18'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+        deleted by us:   payment.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git restore --staged payment.txt
+error: path 'payment.txt' is unmerged
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git add .
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git commit -m "commit payment"
+[detached HEAD 5786c1f] commit payment
+ 1 file changed, 2 insertions(+)
+ create mode 100644 payment.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto bc06b18
+Last command done (1 command done):
+   pick 44101cb commiting payment.txt
+No commands remaining.
+You are currently editing a commit while rebasing branch 'master' on 'bc06b18'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+nothing to commit, working tree clean
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master|REBASE 1/1)
+$ git rebase --continue
+Successfully rebased and updated refs/heads/master.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
+$ mkdir git-merge-test
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7 (master)
+$ cd git-merge-test
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ cd git-merge-test
+bash: cd: git-merge-test: No such file or directory
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git init.
+git: 'init.' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git init .
+Initialized empty Git repository in C:/ust-7/git-merge-test/.git/
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ exho "this is some content to mess with"> merge.txt
+bash: exho: command not found
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ echo "this is some content to mess with"> merge.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git ad merge.txt
+git: 'ad' is not a git command. See 'git --help'.
+
+The most similar commands are
+        add
+        am
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git add merge.txt
+warning: in the working copy of 'merge.txt', LF will be replaced by CRLF the next time Git touches it
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git commit -am "we r commiting initial commit"
+[master (root-commit) 5efd878] we r commiting initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 merge.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git checkout new_branch_to_merge_later
+error: pathspec 'new_branch_to_merge_later' did not match any file(s) known to git
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git branch
+* master
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git branch new_branch_to_merge_later
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git checkout new_branch_to_merge_later
+Switched to branch 'new_branch_to_merge_later'
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (new_branch_to_merge_later)
+$ echo "totally different content to merge later" >mereg.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (new_branch_to_merge_later)
+$ git commit -am "edite the content of merge.txt"
+On branch new_branch_to_merge_later
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mereg.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (new_branch_to_merge_later)
+$ git checkout master
+Switched to branch 'master'
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ echo "content to appear" >> merge.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git commit -am "append the content to merge.txt"
+warning: in the working copy of 'merge.txt', LF will be replaced by CRLF the next time Git touches it
+[master e761038] append the content to merge.txt
+ 1 file changed, 1 insertion(+)
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git merge new_branch_to_merge_later
+Already up to date.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mereg.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git commit -m "merged and resolved the conflict in merge.txt"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mereg.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ cat merge.txt
+this is some content to mess with
+content to appear
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git merge --abort
+fatal: There is no merge to abort (MERGE_HEAD missing).
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mereg.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git checkout new_branch_to_merge_later
+Switched to branch 'new_branch_to_merge_later'
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (new_branch_to_merge_later)
+$ echo "adding from sub branch" >>merge.txt
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (new_branch_to_merge_later)
+$ git status
+On branch new_branch_to_merge_later
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   merge.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (new_branch_to_merge_later)
+$ git commit -am "commiting changes"
+warning: in the working copy of 'merge.txt', LF will be replaced by CRLF the next time Git touches it
+[new_branch_to_merge_later 46a503d] commiting changes
+ 1 file changed, 1 insertion(+)
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (new_branch_to_merge_later)
+$ git status
+On branch new_branch_to_merge_later
+nothing to commit, working tree clean
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (new_branch_to_merge_later)
+$ git checkout master
+Switched to branch 'master'
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$ git merge new_branch_to_merge_later
+Auto-merging merge.txt
+CONFLICT (content): Merge conflict in merge.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master|MERGING)
+$ git merge --abort
+
+SWETHAA@SP_SWETHAA MINGW64 /c/ust-7/git-merge-test (master)
+$
